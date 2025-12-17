@@ -3,7 +3,7 @@
 A modern, elegant e-commerce website for premium gold and silver jewellery collections. Designed to deliver a refined browsing experience with responsive layouts, interactive elements, and smooth animations.
 
 **By:** Stephanie Njonjo
-**Live Demo:** [Link to be added]
+**Live Demo:** https://stephanieest.github.io/kilangi-desktop-website/
 **GitHub Repository:** https://github.com/Stephanieest/kilangi-desktop-website
 
 ---
@@ -165,7 +165,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 ## Contact
 
-**Stephanie Njonjo**
+**Stephanie Njonjo**  
 Email: [stephnjonjo@gmail.com](mailto:stephnjonjo@gmail.com)
 
 ---
