@@ -158,6 +158,12 @@ body {
   padding: 6px 8px;
   width: 100%;
   font-size: 15px;
+  background: transparent;
+}
+
+.search input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .search button {
@@ -167,37 +173,9 @@ body {
   cursor: pointer;
 }
 
-/* ===== SEARCH BAR FIXES ===== */
-.search input {
-  border: 0;
-  outline: 0;
-  padding: 6px 8px;
-  width: 100%;
-  font-size: 15px;
-  background: transparent; /* Add this */
-}
-
-.search input:focus {
-  outline: none; /* Ensure no outline on focus */
-  box-shadow: none; /* Remove any box-shadow */
-}
-
-.search {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff;
-  border-radius: 40px;
-  padding: 10px 14px;
-  border: 1px solid rgba(0, 0, 0, 0.06); /* Make sure this is not too dark */
-  box-shadow: var(--shadow-soft);
-  max-width: 400px;
-  justify-self: start;
-}
-
 /* Remove any focus styles that might create lines */
 .search:focus-within {
-  border-color: rgba(0, 0, 0, 0.1); /* Light border when focused */
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -433,6 +411,81 @@ body {
   display: block;
   object-fit: contain;
   max-height: 220px;
+}
+
+.product-body {
+  padding-top: 12px;
+}
+
+.product-title {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 13px;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: rgba(16, 34, 31, 0.8);
+  text-transform: uppercase;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.rrp {
+  color: rgba(16, 34, 31, 0.35);
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+/* ===== COLOR SELECTION CIRCLES ===== */
+.color-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0;
+  background-clip: padding-box;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+}
+
+.color-circle.gold {
+  background: linear-gradient(135deg, #d4af37 0%, #f9d67a 50%, #d4af37 100%);
+}
+
+.color-circle.silver {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 50%, #c0c0c0 100%);
+}
+
+.color-circle.active {
+  border-color: var(--green-deep);
+  box-shadow: 0 0 0 2px rgba(24, 75, 71, 0.2);
+}
+
+.color-circle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(24, 75, 71, 0.3);
 }
 
 /* ===== RECENTLY VIEWED ===== */

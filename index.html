@@ -126,6 +126,10 @@
             <div class="product-body">
               <h3 class="product-title">STACKABLE RINGS</h3>
               <div class="price-row"><span class="price">₹79,904</span> <del class="rrp">₹99,904</del></div>
+              <div class="color-options">
+                <button class="color-circle gold active" aria-label="Gold" title="Gold"></button>
+                <button class="color-circle silver" aria-label="Silver" title="Silver"></button>
+              </div>
             </div>
           </article>
 
@@ -135,6 +139,10 @@
             <div class="product-body">
               <h3 class="product-title">TWISTED PETAL GOLD BRACELET</h3>
               <div class="price-row"><span class="price">₹79,904</span> <del class="rrp">₹99,904</del></div>
+              <div class="color-options">
+                <button class="color-circle gold active" aria-label="Gold" title="Gold"></button>
+                <button class="color-circle silver" aria-label="Silver" title="Silver"></button>
+              </div>
             </div>
           </article>
 
@@ -144,6 +152,10 @@
             <div class="product-body">
               <h3 class="product-title">PINK CHRISTMAS TREE EARRINGS</h3>
               <div class="price-row"><span class="price">₹79,904</span> <del class="rrp">₹99,904</del></div>
+              <div class="color-options">
+                <button class="color-circle gold active" aria-label="Gold" title="Gold"></button>
+                <button class="color-circle silver" aria-label="Silver" title="Silver"></button>
+              </div>
             </div>
           </article>
         </div>
@@ -615,6 +627,18 @@
         // Add active class to clicked button
         btn.classList.add('active');
         btn.setAttribute('aria-pressed','true');
+      });
+    });
+
+    // Toggle color selection circles
+    document.querySelectorAll('.color-circle').forEach(circle => {
+      circle.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Remove active class from siblings
+        const siblings = this.parentElement.querySelectorAll('.color-circle');
+        siblings.forEach(s => s.classList.remove('active'));
+        // Add active class to clicked circle
+        this.classList.add('active');
       });
     });
   </script>
