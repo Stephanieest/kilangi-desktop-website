@@ -1,167 +1,80 @@
-# Kilangi — Desktop Website (README)
+# Kilangi Jewellery Website
 
-This repository contains the desktop-focused version of the Kilangi jewellery storefront — a static HTML/CSS/JS site (no build tools required). This README explains the desktop layout, project structure, how to run the site locally, where to customize visuals and content, and tips for testing and deployment.
+A beautiful and responsive e-commerce website for Kilangi Jewellery, showcasing timeless silver and gold jewellery with elegant designs and modern interactivity.
 
----
+By: Stephanie Njonjo
 
-## Project overview
+## Description
 
-Kilangi is a responsive, accessible storefront built with:
-- Semantic HTML (index.html)
-- Modular CSS (styles.css) — desktop-first rules included
-- Small, focused JS for UI (mobile nav) and optional hover glow (glow.js)
+Kilangi Jewellery is a premium e-commerce website that offers an elegant browsing experience for customers looking for high-quality silver and gold jewellery. The website features a modern design with smooth animations, interactive product displays, and intuitive navigation.
 
-The "desktop version" uses the full-width, multi-column grid layouts and typographic scale designed for large viewports. The codebase also includes a mobile-first variant; both share the same HTML structure and class names for easier maintenance.
+With Kilangi Jewellery, users can:
 
----
+- Browse collections of rings, earrings, pendants, bracelets, and more
+- View bestselling and recently viewed products
+- Explore gift collections by price range and occasion
+- Read customer testimonials and learn about the brand's ethos
+- Experience smooth animations and interactive hover effects
 
-## Files
+## Features
 
-- `index.html` — Full site HTML (desktop layout included).
-- `styles.css` — Primary stylesheet (desktop rules included).  
-  - Variables at the top for colors, spacing, and sizes.
-  - Breakpoints are used to switch between mobile and desktop layouts.
-- `glow.js` — Optional script to add a gold hover/touch glow to buttons and images.
-- `glow.css` (optional) — Glow styles appended to styles.css if you used them separately.
-- `README.md` — This file.
+- **Responsive Design**: Works perfectly on all devices from desktop to mobile
+- **Interactive Product Display**: Hover effects, animations, and smooth transitions
+- **Category Filtering**: Filter products by jewellery type
+- **Gift Collections**: Curated gift ideas for birthdays, anniversaries, and engagements
+- **Customer Testimonials**: Social proof with customer reviews
+- **Brand Story**: Learn about the brand's ethos and sustainability practices
+- **Accessibility**: ARIA labels, semantic HTML, and keyboard navigation
 
-> Note: If you received multiple CSS/HTML variations during design iterations, make sure you use the latest `index.html` and `styles.css` pair.
+## How to Use
 
----
+### Requirements
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Internet connection (for fonts and external images)
 
-## How to view the desktop version locally
+### View Live Site
+Visit the live application at: 
 
-1. Clone or copy the project files into a folder.
-2. Open `index.html` in a desktop browser (Chrome, Firefox, Safari, Edge).
-   - For a simple static server (recommended to avoid file:// restrictions):
-     - Python 3:
+### Local Development
+If you want to run the project locally, follow these steps:
 
-       python3 -m http.server 8000
-       # then open http://localhost:8000
- 
-     - Node (http-server):
+1. **Download the files** to your computer
+2. **Open the project in VS Code**
+3. **Open `index.html`** in your browser
+   - Right-click the file and select "Open with Live Server" (if using VS Code Live Server extension)
+   - Or simply double-click the file to open in your default browser
 
-       npx http-server .
-
-
----
-
-## Desktop-specific notes
-
-- Layout
-  - Desktop uses multi-column CSS Grid across sections:
-    - Hero: 2-column (left image + right content)
-    - Promo panels: 2-column rectangular panels
-    - Collection: multi-column (7 columns in the reference)
-    - Gift sections, ethos, testimonials: multi-column grid
-  - See top of `styles.css` for CSS variables (colors, max-width, panel height, etc).
-
-- Typography
-  - Playfair Display used for headings (e.g., hero, promos, section titles).
-  - Montserrat used for body/supporting text.
-  - Font stacks are included in `index.html` via Google Fonts.
-
-- Images
-  - Desktop expects larger images (1600–2200px wide recommended).
-  - Images are used as `background-image` in certain hero/promo panels to preserve cropping control.
-
-- Buttons & CTAs
-  - Primary CTAs are styled with stronger shadows and weights on desktop.
-  - `.btn-cta`, `.btn-dark`, `.btn-white` are the main CTA classes.
-
----
-
-## Glow (hover) effect
-
-- Script: `glow.js` — toggles a `.gold-glow` class on hover/focus/tap.
-- Styles: glow rules appended to `styles.css` (or in separate `glow.css` if you prefer).
-- Installation:
-  1. Ensure `glow.js` is included in `index.html` just before `</body>`:
-     ```html
-     <script src="glow.js" defer></script>
-     ```
-  2. Make sure the glow CSS is present at the end of `styles.css`.
-- Customization:
-  - Edit the RGBA gold color in CSS (`rgba(255,197,62,...)`) to change hue/intensity.
-  - Tweak blur, spread and transform in the `.gold-glow` rules.
-
----
-
-## Accessibility & UX
-
-- Keyboard focus:
-  - Hover glow also appears on keyboard focus to help keyboard users.
-  - Use `:focus-visible` in CSS to fine-tune keyboard indicators.
-- Reduced motion:
-  - Consider adding `prefers-reduced-motion` media query to tone down transforms for users who prefer less motion.
-- Semantic HTML:
-  - Content uses headings, landmarks and ARIA attributes for nav toggles.
-
-Example: prefer-reduced-motion snippet:
-```css
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
-}
+### File Structure
+```
+kilangi-jewellery/
+├── index.html          # Main website file
+├── styles.css          # All styling
+├── main.js             # Interactive features
+├── logo.png            # Main logo
+├── footerlogo.png      # Footer logo
+└── README.md           # This documentation
 ```
 
----
+## Technologies Used
 
-## Customization checklist
+- **HTML5**: Semantic markup with accessibility features
+- **CSS3**: Custom properties, Flexbox, Grid, and responsive design
+- **JavaScript (ES6+)**: Interactive animations and features
+- **Google Fonts**: Montserrat and Playfair Display
 
-- Colors: change CSS variables at the top of `styles.css`:
-  ```css
-  --green-deep: #184b47;
-  --panel-height: 360px;
-  ```
-- Fonts: update Google Fonts link in `index.html` or replace with system fonts.
-- Images: replace `picsum.photos` placeholders with production image URLs, ideally at appropriate sizes for desktop (1600–2200px width).
-- Copy: edit headings, paragraphs and button links in `index.html`.
-- SEO: add meta tags, Open Graph tags, and structured data as needed.
+## Support and Contact
 
----
+For any questions, suggestions, or assistance, feel free to reach out:
+Email: [Your Email]
 
-## Testing
+## License
 
-- Check in major browsers on desktop:
-  - Chrome, Firefox, Safari, Edge.
-- Test responsive breakpoints by resizing the browser:
-  - Desktop layout (>= 980px) should show multi-column layout.
-  - Tablet / mobile should stack content.
-- Accessibility testing:
-  - Use keyboard navigation (Tab) to ensure focus states are sensible.
-  - Use Lighthouse or axe for automated accessibility audits.
+MIT License
 
----
+Copyright © 2024 [Your Name]
 
-## Deployment
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-This is a static site — deployable to any static hosting environment:
-- GitHub Pages
-- Netlify
-- Vercel
-- S3 + CloudFront
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-Example Netlify steps:
-1. Push repository to Git.
-2. Connect repository to Netlify and deploy (no build step required).
-
----
-
-## Troubleshooting
-
-- Fonts not loading:
-  - Ensure network access to fonts.googleapis.com.
-- Images appear blurry:
-  - Replace placeholders with high-resolution assets and adjust `object-fit`/`background-position`.
-- Glow effect not showing:
-  - Confirm `glow.js` is loaded; check console for errors. Make sure CSS glow rules are present.
-
----
-
-## What's included in the desktop bundle
-
-- Pixel-accurate promo panels (rectangular)
-- 2-column hero with left image and right text
-- Collection grid with many columns (desktop)
-- Testimonials, Gifts, Ethos, and lab-grown "Future" sections
-- Optional gold hover glow effect for buttons/images
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

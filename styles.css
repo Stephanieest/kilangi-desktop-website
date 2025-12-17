@@ -93,6 +93,43 @@ body {
   opacity: 1;
 }
 
+/* ===== SOCIAL MEDIA ICONS ===== */
+.top-icons {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.top-icons a.social {
+  color: #fff;
+  opacity: 0.95;
+  text-decoration: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.top-icons a.social:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.top-icons a.social[aria-label="Instagram"]:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+}
+
+.top-icons a.social[aria-label="Facebook"]:hover {
+  background: #1877f2;
+  color: white;
+}
+
 /* ===== HEADER STYLES ===== */
 .header-grid {
   display: grid;
@@ -128,6 +165,39 @@ body {
   border: 0;
   color: var(--muted);
   cursor: pointer;
+}
+
+/* ===== SEARCH BAR FIXES ===== */
+.search input {
+  border: 0;
+  outline: 0;
+  padding: 6px 8px;
+  width: 100%;
+  font-size: 15px;
+  background: transparent; /* Add this */
+}
+
+.search input:focus {
+  outline: none; /* Ensure no outline on focus */
+  box-shadow: none; /* Remove any box-shadow */
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06); /* Make sure this is not too dark */
+  box-shadow: var(--shadow-soft);
+  max-width: 400px;
+  justify-self: start;
+}
+
+/* Remove any focus styles that might create lines */
+.search:focus-within {
+  border-color: rgba(0, 0, 0, 0.1); /* Light border when focused */
 }
 
 .logo {
